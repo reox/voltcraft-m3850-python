@@ -1,3 +1,6 @@
+Voltcraft/Metex M-3850 Serial Communication
+-------------------------------------------
+
 This is a proof of concept for serial communication with a Voltcraft/METEX M-3850 DMM.
 
 The original manufacturer of the multimeter is METEX.

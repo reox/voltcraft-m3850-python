@@ -38,8 +38,7 @@ with serial.Serial('/dev/ttyUSB0',
     ser.setRTS(False)  # Set RTS to -12V
     ser.setDTR(True)   # Set DTR to +12V
 
-    # It seems to be sufficient to send the "D" command once on startup:
-    ser.write(b'D')
+    # Assume the meter is in COM mode. In that mode, it will send stuff automatically.
 
     # Skip the first maybe garbled stuff
     x = None

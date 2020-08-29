@@ -93,16 +93,13 @@ The time depends on the mode, it looks like that temperature measurement is slow
 
 There seems to be two different methods how to get values from the meter:
 1) send the D command every time
-2) use the COM mode and send it once.
+2) use the COM mode and send it once (or even none).
 
-However, it looks like the meter is not very consistent. I could make it work to retrieve a value
-without being in the COM mode by sending "D", but that seemed to work only once.
-In the COM mode it looks like to be sufficient to send the "D" only one time in the beginning.
-But the meter seems to send you values even if you do not send a "D". Maybe you have to activate it
-only once for each powering up.
-I.e. it works to start the script, read some values, then switch the mode, go back on COM and it will
-read more values. However, for the new mode no "D" has been send!
-I'm not sure how this works to be honest and the manual does not tell you either...
+The first mode seems to work regardless of the COM setting on the meter itself.
+That means you have to poll the meter for every reading.
+In the second mode, the meter will write to the serial when it feels to.
+It looks like that sending the "D" command is not necessary there, the meter will send you
+stuff even if you never send that command. However, the manual species that you should send it.
 
 The meter also has a small bug when switching modes when in COM mode.
 As the COM mode is disabled on mode switch, the meter will stop sending lines for the new mode.
